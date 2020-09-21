@@ -1,12 +1,9 @@
 <mat-toolbar class="header" *ngIf="nav.visible">
     <!-- <div class="container-fluid"> -->
     <mat-toolbar-row class="header_area">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button 
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+   
       <div class="company_name">
-        <h3>xdfcghbjnkm,.</h3>
+        <h3>xdfcgvhbjnkm</h3>
       </div>
       <!-- <p class="cust-email">{{email}}</p> -->
       <div class="setting_sec">
@@ -43,3 +40,4 @@
     <!-- </div> -->
     <!-- <mat-icon (click)="openDialog()">edit</mat-icon> -->
   </mat-toolbar>
+    <router-outlet></router-outlet>

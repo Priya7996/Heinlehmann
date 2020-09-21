@@ -9,7 +9,7 @@ import { NavbarService} from '../../Nav/navbar.service';
 export class LoginComponent implements OnInit {
 
   constructor(private nav:NavbarService) {
-    this.nav.show();
+     this.nav.hide();
 
    }
 

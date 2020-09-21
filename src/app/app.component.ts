@@ -7,7 +7,7 @@ import { NavbarService} from './Nav/navbar.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'jai';
+  title = 'Yantra8';
   constructor(public nav:NavbarService){}
   ngOnInit(){}
 }

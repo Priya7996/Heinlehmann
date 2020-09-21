@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [{ path: '', loadChildren: () => import('./Components/login/login.module').then(m => m.LoginModule) }, 
+const routes: Routes = [
+{ path: '', loadChildren: () => import('./Components/login/login.module').then(m => m.LoginModule) }, 
 { path: 'admin_dashboard', loadChildren: () => import('./Components/admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardModule) }, 
 { path: 'user', loadChildren: () => import('./Components/user/user.module').then(m => m.UserModule) }, 
 { path: 'profile', loadChildren: () => import('./Components/profile/profile.module').then(m => m.ProfileModule) }, 
 { path: 'notification', loadChildren: () => import('./Components/notification/notification.module').then(m => m.NotificationModule) }, 
 { path: 'machine_list', loadChildren: () => import('./Components/machine-list/machine-list.module').then(m => m.MachineListModule) },
- { path: 'sidebar', loadChildren: () => import('./Nav/sidebar/sidebar.module').then(m => m.SidebarModule) }];
+{ path: 'sidebar', loadChildren: () => import('./Nav/sidebar/sidebar.module').then(m => m.SidebarModule) },
+ ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

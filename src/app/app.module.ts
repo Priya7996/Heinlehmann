@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule} from './Components/shared/shared.module';
 import { NavbarService} from './Nav/navbar.service';
 import { SidebarComponent } from './Nav/sidebar/sidebar.component';
-import { SharedModule} from './Components/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { SharedModule} from './Components/shared/shared.module';
     BrowserAnimationsModule,
     SharedModule
   ],
+  bootstrap: [AppComponent],
   providers: [NavbarService],
-  bootstrap: [AppComponent]
+
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarService} from '../../Nav/navbar.service';
+ import { NavbarService} from '../../Nav/navbar.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +9,7 @@ import { NavbarService} from '../../Nav/navbar.service';
 export class ProfileComponent implements OnInit {
 
   constructor(private nav:NavbarService) {
-    this.nav.show();
+     this.nav.show();
 
    }
 

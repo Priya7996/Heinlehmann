@@ -1,5 +1,6 @@
-import { NavbarService } from '../navbar.service';
 import { Component, OnInit,OnChanges,SimpleChanges,Inject,Input} from '@angular/core';
+
+import { NavbarService } from '../navbar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,15 +14,10 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
   }
-
   ngOnChanges(changes: SimpleChanges) {
-    // if(changes.navStatus.currentValue){
-    //   this.first_name =localStorage.getItem('first_name');
-    //   this.last_name =localStorage.getItem('last_name');
-    //   this.tenant =localStorage.getItem('tenant_id');
-    //   this.email =localStorage.getItem('email');
-    // }
+    if(changes.navStatus.currentValue){
+     
+    }
 
 }
-
 }
