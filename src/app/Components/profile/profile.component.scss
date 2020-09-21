@@ -1,0 +1,34 @@
+.page_title{
+    margin-bottom: 0;
+}
+.image_warpper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px auto;
+    img{
+        width: 100%;
+    }
+}
+mat-card{
+    padding: 35px;
+}
+mat-button-toggle-group{
+    margin-left: 15px;
+}
+.flex_between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+mat-card-actions{
+    button{
+        box-shadow: none!important;
+        margin-left:10px;
+    }
+}
+mat-card-content{
+    span{
+        display: block;
+    }
+}

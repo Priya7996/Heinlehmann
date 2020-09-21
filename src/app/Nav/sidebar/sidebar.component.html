@@ -1,43 +1,60 @@
-<mat-toolbar class="header" *ngIf="nav.visible">
-    <!-- <div class="container-fluid"> -->
-    <mat-toolbar-row class="header_area">
-   
-      <div class="company_name">
-        <h3>xdfcgvhbjnkm</h3>
-      </div>
-      <!-- <p class="cust-email">{{email}}</p> -->
-      <div class="setting_sec">
-        <div class="action_menus">
-          <a [matMenuTriggerFor]="menu" class="menu_open">
-            <i class="material-icons">
-              settings
-            </i>
-          </a>
-          <mat-menu #menu="matMenu" class="actions">
-            <button mat-menu-item (click)="open()">
-              <i class="material-icons">
-                edit
-              </i>
-              Edit
-            </button>
-            <button mat-menu-item (click)="close()">
-              <i class="material-icons">
-                power_settings_new
-              </i>
-              logout</button>
-          </mat-menu>
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer mode="side" opened>
+    <div class="logo_wrapper">
+      <img src="../../../assets/img/Group 481.png">
+    </div>
+    <div class="navigation_wrapper">
+      <button mat-button routerLink="./admin_dashboard"><img src="../../../assets/img/web-page-home.svg">Dashboard</button>
+      <button mat-button routerLink="./notification"><img src="../../../assets/img/notification.svg">Notifications</button>
+      <button mat-button routerLink="./profile"><img src="../../../assets/img/avatar.svg">Profiles</button>
+      <button mat-button routerLink="./machine_list"><img src="../../../assets/img/folder (4).svg">Machine</button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar class="header" *ngIf="nav.visible">
+      <mat-toolbar-row class="header_area">
+        <div class="company_name">
+          <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="drawer.toggle()" class="toggle-btn">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <span>HEIN, LEHMANN India Pvt. Ltd.</span>
         </div>
-  
-        <!-- <a  class="user_link" (click)="open()"><mat-icon class="v-align-middle edit">edit</mat-icon></a>
-          <a class="logout" (click)="close()">
-            <img src="../../../assets/images/signout.svg">
-            <i class="fa fa-sign-out" aria-hidden="true"></i>
-          </a> -->
-      </div>
-  
-      <!-- <button class="logout" mat-raised-button (click)="close()">Logout</button> -->
-    </mat-toolbar-row>
-    <!-- </div> -->
-    <!-- <mat-icon (click)="openDialog()">edit</mat-icon> -->
-  </mat-toolbar>
-    <router-outlet></router-outlet>
+        
+        <div class="setting_sec">
+          <div class="action_menus">
+            <a [matMenuTriggerFor]="menu" class="menu_open">
+              <i class="material-icons">
+                settings
+              </i>
+            </a>
+            <mat-menu #menu="matMenu" class="actions">
+              <button mat-menu-item (click)="open()">
+                <i class="material-icons">
+                  edit
+                </i>
+                Edit
+              </button>
+              <button mat-menu-item (click)="close()">
+                <i class="material-icons">
+                  power_settings_new
+                </i>
+                logout</button>
+            </mat-menu>
+          </div>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+    
+       <!-- <a  class="user_link" (click)="open()"><mat-icon class="v-align-middle edit">edit</mat-icon></a>
+            <a class="logout" (click)="close()">
+              <img src="../../../assets/images/signout.svg">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+            </a> -->
+
+                <!-- <mat-icon (click)="openDialog()">edit</mat-icon> -->

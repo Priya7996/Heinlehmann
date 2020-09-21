@@ -1,5 +1,151 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/theming';
+
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+// Plus imports for other components in your app.
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$primary-im: (
+
+    50 : #fef2e4,
+    100 : #fcdfbc,
+    200 : #fbc990,
+    300 : #f9b363,
+    400 : #f7a341,
+    500 : #f69320,
+    600 : #f58b1c,
+    700 : #f38018,
+    800 : #f27613,
+    900 : #ef640b,
+    A100 : #ffffff,
+    A200 : #ffefe6,
+    A400 : #ffcdb3,
+    A700 : #ffbd9a,
+    contrast: (
+        50 : #fff,
+        100 : #fff,
+        200 : #fff,
+        300 : #fff,
+        400 : #fff,
+        500 : #fff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #fff,
+        A100 : #fff,
+        A200 : #fff,
+        A400 : #fff,
+        A700 : #fff,
+    )
+
+);
+
+$accent-im: (
+    50 : #fdece5,
+    100 : #fbcebe,
+    200 : #f9ae93,
+    300 : #f68e68,
+    400 : #f47547,
+    500 : #f25d27,
+    600 : #f05523,
+    700 : #ee4b1d,
+    800 : #ec4117,
+    900 : #e8300e,
+    A100 : #ffffff,
+    A200 : #ffe4e0,
+    A400 : #ffb8ad,
+    A700 : #ffa194,
+    contrast: (
+        50 : #fff,
+        100 : #fff,
+        200 : #fff,
+        300 : #fff,
+        400 : #fff,
+        500 : #fff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #fff,
+        A100 : #fff,
+        A200 : #fff,
+        A400 : #fff,
+        A700 : #fff,
+    )
+);
+$warn-im: (
+    50 : #fee4e4,
+    100 : #fdbcbc,
+    200 : #fc8f8f,
+    300 : #fa6262,
+    400 : #f94141,
+    500 : #f81f1f,
+    600 : #f71b1b,
+    700 : #f61717,
+    800 : #f51212,
+    900 : #f30a0a,
+    A100 : #ffffff,
+    A200 : #ffe9e9,
+    A400 : #ffb6b6,
+    A700 : #ff9c9c,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$pre-primary-im: mat-palette($primary-im);
+$pre-accent-im:  mat-palette($accent-im);
+$pre-warn-im:    mat-palette($warn-im);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$im-app-theme: mat-light-theme($pre-primary-im, $pre-accent-im, $pre-warn-im);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+@include angular-material-theme($im-app-theme);
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+
+h2.page_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #363636;
+    margin-bottom: 30px;
+}
+.container-fluid {
+    margin-top: 20px;
+    max-width: 1166px;
+}
+button:focus{
+    outline: none;
+}
+
+.style-2{
+    font-family: 'Oswald', sans-serif;
+}

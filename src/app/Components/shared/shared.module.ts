@@ -8,7 +8,7 @@ import { MatButtonModule,MatMenuModule,MatIconModule,MatInputModule,MatCardModul
          MatGridListModule,MatStepperModule,MatTreeModule,
          MatSnackBarModule,MatTabsModule,MatDialogModule,MatTableModule,
          MatCheckboxModule,MatPaginatorModule,
-         MatButtonToggleModule,MatToolbarModule,MatTooltipModule } from '@angular/material';
+         MatButtonToggleModule,MatToolbarModule,MatTooltipModule,MatRippleModule } from '@angular/material';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { MatNativeDateModule } from '@angular/material/core';
 // import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,7 +24,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ,MatExpansionModule,MatGridListModule,MatStepperModule,MatTooltipModule,
     MatTreeModule,MatButtonToggleModule,MatSnackBarModule,MatTabsModule,
     MatDialogModule,MatTableModule,MatDatepickerModule,MatCheckboxModule, 
-    CommonModule,MatToolbarModule,MatPaginatorModule
+    CommonModule,MatToolbarModule,MatPaginatorModule,MatRippleModule
   ],
   exports:[FormsModule, ReactiveFormsModule,MatButtonModule,MatMenuModule,
     MatIconModule,MatInputModule,MatCardModule,MatFormFieldModule,MatListModule,
