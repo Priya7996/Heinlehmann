@@ -24,6 +24,7 @@ mat-card{
     }
     span{
         display: block;
+        font-size: 14PX;
         &.number {
             height: 40px;
             width: 40px;
@@ -53,9 +54,11 @@ mat-expansion-panel{
     box-shadow: none!important;
 }
 .additional-sidebar {
-    height: calc(100vh - 108px);
+    height: calc(100vh - 65px);
     border-left: 1px solid #e0e0e0;
     background: #fff;
+    position: sticky;
+    top: 64px;
 }
 .company_names{
     button{
@@ -64,3 +67,8 @@ mat-expansion-panel{
         width: 100%;
     }
 }
+@media only screen and (max-width: 1366px) {
+    .col-md-3{
+        padding-right: 0;
+    }
+  }

@@ -24,7 +24,7 @@ export class AdminDashboardComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 700,
-    nav:true,
+    // nav:true,
     navText: ["<span class='material-icons'>chevron_left</span>", "<span class='material-icons'>chevron_right</span>"],
     responsive: {
       0: {

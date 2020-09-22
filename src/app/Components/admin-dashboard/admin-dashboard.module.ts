@@ -6,13 +6,14 @@ import { AdminDashboardComponent } from './admin-dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import {MatRippleModule} from '@angular/material/core';
 
 const routes: Routes = [{ path: '', component: AdminDashboardComponent }];
 
 @NgModule({
   declarations: [AdminDashboardComponent],
   imports: [RouterModule.forChild(routes),
-    CommonModule,SharedModule,CarouselModule
+    CommonModule,SharedModule,CarouselModule,MatRippleModule
     
   ]
 }) 

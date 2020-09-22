@@ -35,6 +35,20 @@ mat-card{
     .mat-card-header .mat-card-title {
         margin-bottom: 6px;
     }
+    &.vendor_card{
+        mat-card-subtitle{
+            margin-bottom: 0;
+        }
+        &.selected{
+            border:1px solid #F69320;
+        }
+        img.tick {
+            max-width: 24px;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+    }
 }
 .sub_header{
     mat-form-field{

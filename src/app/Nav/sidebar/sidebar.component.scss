@@ -12,12 +12,13 @@
   mat-drawer {
     width: 200px;
     background-color: #393939;
+    border: 0;
   }
   .mat-toolbar-row, .mat-toolbar-single-row {
     justify-content: space-between;
 }
 .toggle-btn{
-    display: none;
+    display: block;
 }
 .navigation_wrapper {
     > button {
@@ -28,9 +29,14 @@
         font-weight: 400;
         font-size: 16px;
         padding: 3px 20px;
+        border-radius: 0;
         img{
             margin-right: 10px;
             margin-top: -5px;
+        }
+        &.active-link {
+            background: #444;
+            border-right: 2px solid #f69320;
         }
     }
 }
@@ -45,3 +51,18 @@
         max-width: 135px;
     }
 }
+.mat-toolbar-multiple-rows {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.company_name {
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 1200px) {
+    .toggle-btn{
+        display: block;
+    }
+  }

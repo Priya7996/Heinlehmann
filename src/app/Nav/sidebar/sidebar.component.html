@@ -1,13 +1,13 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawer mode="side" opened>
+  <mat-drawer #drawer [opened]="opened" [mode]="mode">
     <div class="logo_wrapper">
       <img src="../../../assets/img/Group 481.png">
     </div>
     <div class="navigation_wrapper">
-      <button mat-button routerLink="./admin_dashboard"><img src="../../../assets/img/web-page-home.svg">Dashboard</button>
-      <button mat-button routerLink="./notification"><img src="../../../assets/img/notification.svg">Notifications</button>
-      <button mat-button routerLink="./profile"><img src="../../../assets/img/avatar.svg">Profiles</button>
-      <button mat-button routerLink="./machine_list"><img src="../../../assets/img/folder (4).svg">Machine</button>
+      <button mat-button routerLink="./admin_dashboard" routerLinkActive="active-link"><img src="../../../assets/img/web-page-home.svg">Dashboard</button>
+      <button mat-button routerLink="./notification" routerLinkActive="active-link"><img src="../../../assets/img/notification.svg">Notifications</button>
+      <button mat-button routerLink="./profile" routerLinkActive="active-link"><img src="../../../assets/img/avatar.svg">Profiles</button>
+      <button mat-button routerLink="./machine_list" routerLinkActive="active-link"><img src="../../../assets/img/folder (4).svg">Machine</button>
     </div>
   </mat-drawer>
   <mat-drawer-content>
@@ -15,7 +15,7 @@
       <mat-toolbar-row class="header_area">
         <div class="company_name">
           <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="drawer.toggle()" class="toggle-btn">
-            <mat-icon>favorite</mat-icon>
+            <mat-icon><span class="material-icons">menu</span></mat-icon>
           </button>
           <span>HEIN, LEHMANN India Pvt. Ltd.</span>
         </div>

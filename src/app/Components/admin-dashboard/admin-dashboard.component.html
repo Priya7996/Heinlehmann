@@ -1,7 +1,19 @@
-<h2 class="page_title">Vendor List</h2>
+<div class="title_wrapper">
+    <h2 class="page_title">Vendor List</h2>
+</div>
 <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide>
-        <mat-card class="example-card">
+        <mat-card class="vendor_card selected" matRipple>
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
+              <mat-card-title>Berkeley Miners</mat-card-title>
+              <mat-card-subtitle>Machine 1</mat-card-subtitle>
+            </mat-card-header>
+            <img class="tick" src="../../../assets/img/check_circle-24px.svg">
+        </mat-card>
+    </ng-template>  
+    <ng-template carouselSlide>
+        <mat-card class="vendor_card" matRipple>
             <mat-card-header>
               <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
               <mat-card-title>Berkeley Miners</mat-card-title>
@@ -10,7 +22,7 @@
         </mat-card>
     </ng-template>  
     <ng-template carouselSlide>
-        <mat-card class="example-card">
+        <mat-card class="vendor_card" matRipple>
             <mat-card-header>
               <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
               <mat-card-title>Berkeley Miners</mat-card-title>
@@ -19,7 +31,7 @@
         </mat-card>
     </ng-template>  
     <ng-template carouselSlide>
-        <mat-card class="example-card">
+        <mat-card class="vendor_card" matRipple>
             <mat-card-header>
               <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
               <mat-card-title>Berkeley Miners</mat-card-title>
@@ -28,16 +40,7 @@
         </mat-card>
     </ng-template>  
     <ng-template carouselSlide>
-        <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
-              <mat-card-title>Berkeley Miners</mat-card-title>
-              <mat-card-subtitle>Machine 1</mat-card-subtitle>
-            </mat-card-header>
-        </mat-card>
-    </ng-template>  
-    <ng-template carouselSlide>
-        <mat-card class="example-card">
+        <mat-card class="vendor_card" matRipple>
             <mat-card-header>
               <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
               <mat-card-title>Berkeley Miners</mat-card-title>
@@ -48,10 +51,10 @@
   </owl-carousel-o>
 
 <div class="row sub_header">
-    <div class="col-md-6">
+    <div class="col-md-12 col-lg-12 col-xl-6">
         <h2 class="page_title">Overview</h2>
     </div>
-    <div class="col-md-6 text-right">
+    <div class="col-md-12 col-lg-12 col-xl-6 text-right">
         <mat-form-field appearance="outline">
             <mat-label>Favorite food</mat-label>
             <mat-select>
@@ -70,7 +73,7 @@
 
 <div class="charts_wrapper">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-sm-12 col-md-12 col-lg-6">
             <mat-card class="chart_card">
                 <div class="mat-header">
                   <mat-card-title>Machine Running Time</mat-card-title>
@@ -108,7 +111,7 @@
                 </mat-card-actions>
               </mat-card>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-12 col-md-12 col-lg-6">
             <mat-card class="chart_card">
                 <div class="mat-header">
                   <mat-card-title>Machine Running Time</mat-card-title>
@@ -146,7 +149,7 @@
                 </mat-card-actions>
               </mat-card>
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-12 col-md-12 col-lg-6">
             <mat-card class="chart_card speedo_meter">
                 <div class="mat-header">
                   <mat-card-title>Machine Running Time</mat-card-title>
@@ -184,7 +187,7 @@
                 </mat-card-actions>
               </mat-card>
         </div>
-        <div class="col-md-6">
+        <div class="ccol-sm-12 col-md-12 col-lg-6">
             <mat-card class="chart_card speedo_meter">
                 <div class="mat-header">
                   <mat-card-title>Machine Running Time</mat-card-title>
