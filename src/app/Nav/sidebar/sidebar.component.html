@@ -19,28 +19,8 @@
           </button>
           <span>HEIN, LEHMANN India Pvt. Ltd.</span>
         </div>
-        
         <div class="setting_sec">
-          <div class="action_menus">
-            <a [matMenuTriggerFor]="menu" class="menu_open">
-              <i class="material-icons">
-                settings
-              </i>
-            </a>
-            <mat-menu #menu="matMenu" class="actions">
-              <button mat-menu-item (click)="open()">
-                <i class="material-icons">
-                  edit
-                </i>
-                Edit
-              </button>
-              <button mat-menu-item (click)="close()">
-                <i class="material-icons">
-                  power_settings_new
-                </i>
-                logout</button>
-            </mat-menu>
-          </div>
+          <button mat-icon-button (click)="close()"><i class="material-icons">power_settings_new</i></button>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>

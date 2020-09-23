@@ -152,3 +152,10 @@ button:focus{
 .style-2{
     font-family: 'Oswald', sans-serif;
 }
+
+@media only screen and (max-width: 768px) {
+    mat-form-field{
+        width: 100%;
+        margin: 0!important;
+    }
+  }

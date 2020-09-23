@@ -10,6 +10,7 @@ const routes: Routes = [
 { path: 'notification', loadChildren: () => import('./Components/notification/notification.module').then(m => m.NotificationModule) }, 
 { path: 'machine_list', loadChildren: () => import('./Components/machine-list/machine-list.module').then(m => m.MachineListModule) },
 { path: 'sidebar', loadChildren: () => import('./Nav/sidebar/sidebar.module').then(m => m.SidebarModule) },
+{ path: 'machine-detail', loadChildren: () => import('./Components/machine-detail/machine-detail.module').then(m => m.MachineDetailModule) },
  ];
 
 @NgModule({
