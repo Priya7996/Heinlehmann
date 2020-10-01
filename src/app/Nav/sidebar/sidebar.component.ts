@@ -1,7 +1,8 @@
-import { HostListener } from '@angular/core';
 import { Component, OnInit,OnChanges,SimpleChanges,Inject,Input} from '@angular/core';
+import { Router } from '@angular/router';
 
 import { NavbarService } from '../navbar.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,7 +14,7 @@ export class SidebarComponent implements OnInit {
   opened: boolean;
   mode : string;
 
-  constructor(public nav: NavbarService) { }
+  constructor(public nav: NavbarService,private route:Router) { }
 
   ngOnInit() {
 
@@ -31,7 +32,7 @@ export class SidebarComponent implements OnInit {
     
   }
 
-  @HostListener("window:resize", [])
+  // @HostListener("window:resize", [])
  
 
   ngOnChanges(changes: SimpleChanges) {
@@ -39,5 +40,22 @@ export class SidebarComponent implements OnInit {
      
     }
 
+}
+close() {
+  Swal.fire({
+    title: 'Are you sure want to logout?',
+    // type: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Ok',
+    cancelButtonText: 'Cancel'
+  }).then((result) => {
+    if (result.value) {
+      localStorage.clear();
+      // this.first_name = [];
+      // this.last_name = [];
+      // this.email = [];
+      this.route.navigateByUrl('');
+    }
+  });
 }
 }

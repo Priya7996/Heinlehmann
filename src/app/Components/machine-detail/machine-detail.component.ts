@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService} from '../../Nav/navbar.service';
+import { MachinedetailService } from '../../Service/app/machinedetail.service';
 
 @Component({
   selector: 'app-machine-detail',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MachineDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private nav:NavbarService,private service:MachinedetailService) {
+    this.nav.show();
+
+   }
 
   ngOnInit() {
   }

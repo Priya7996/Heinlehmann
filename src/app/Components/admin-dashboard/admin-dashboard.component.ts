@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService} from '../../Nav/navbar.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { AdmindashboardService } from '../../Service/app/admindashboard.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,7 +10,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor(private nav:NavbarService) { 
+  constructor(private nav:NavbarService,private service:AdmindashboardService) { 
      this.nav.show();
 
   }

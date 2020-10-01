@@ -4,19 +4,24 @@
             <img src="../../../assets/img/dark-logo.png">
           </div>
         <h2 class="style-2">Signin to continue with <span>Yantra24x7</span></h2>
+        <form [formGroup]="login" >
         <mat-form-field appearance="outline">
             <mat-label>Username</mat-label>
-            <input matInput placeholder="Placeholder">
+            <input matInput placeholder="Placeholder" formControlName="email_id" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ng-reflect-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a"  required>
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+           
+            <mat-error *ngIf="login.get('email_id').hasError('email')"> Enter valid email address</mat-error>
         </mat-form-field>
       
         <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="Placeholder">
-            <mat-icon matSuffix><span class="material-icons">visibility</span></mat-icon>
-        </mat-form-field>
+            <input matInput placeholder="Placeholder" formControlName="password" [type]=" hide ? 'password' : 'text'">
+            <mat-icon class="eye" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>       
+         </mat-form-field>
         <div class="form-footer">
-            <button mat-raised-button color="primary">SUBMIT</button>
+            <button mat-raised-button color="primary" [disabled]="login.invalid" (click)="logintest()">SUBMIT</button>
         </div>
+    </form>
     </div>
 </div>

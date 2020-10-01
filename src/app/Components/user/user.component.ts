@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
  import { NavbarService} from '../../Nav/navbar.service';
+ import { UserService } from '../../Service/app/user.service';
 
 @Component({
   selector: 'app-user',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-
-  constructor(private nav:NavbarService) {
+  picker:any;
+  constructor(private nav:NavbarService,private service:UserService) {
      this.nav.show();
 
    }

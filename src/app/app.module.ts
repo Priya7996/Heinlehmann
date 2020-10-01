@@ -7,16 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule} from './Components/shared/shared.module';
 import { NavbarService} from './Nav/navbar.service';
 import { SidebarComponent } from './Nav/sidebar/sidebar.component';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CoreModule} from '../app/Service/core/core.module';
 @NgModule({
   declarations: [
     AppComponent,SidebarComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,CoreModule
   ],
   bootstrap: [AppComponent],
   providers: [NavbarService],
