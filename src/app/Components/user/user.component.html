@@ -1,32 +1,35 @@
-
-<div class="field_wrapper">
-    <mat-form-field appearance="outline">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option>option 1</mat-option>
-          <mat-option>option 1</mat-option>
-          <mat-option>option 1</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option>option 1</mat-option>
-          <mat-option>option 1</mat-option>
-          <mat-option>option 1</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-          <mat-option>option 1</mat-option>
-          <mat-option>option 1</mat-option>
-          <mat-option>option 1</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker1></mat-datepicker>
-    </mat-form-field>
+<div class="flex_between">
+  <div class="d-flex align-items-center title_wrapper">
+      <h2 class="page_title">User List</h2>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <!-- <mat-button-toggle value="bold"><span class="material-icons">border_all</span></mat-button-toggle>
+          <mat-button-toggle value="italic"><span class="material-icons">format_list_bulleted</span></mat-button-toggle> -->
+      </mat-button-toggle-group>
+  </div>
+  <button mat-mini-fab color="primary" (click)="user()"><span class="material-icons">add</span></button>
+</div>
+<div class="card_wrapper">
+  <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let machine of back ;let i=index">
+          <mat-card class="text-center" >
+                 <div class="image_warpper">
+                  <img src="../../../assets/img/Ellipse 51.png">
+                 </div> 
+                <mat-card-title>{{machine.first_name}} {{machine.last_name}}</mat-card-title>
+                <mat-card-subtitle>{{machine.email_id}}</mat-card-subtitle>
+              <mat-card-content>
+                <span>{{machine.phone_number}}</span>
+                <span>xxxx</span>
+                <span>xxxx</span>
+              </mat-card-content>
+              <mat-card-actions>
+                  <button mat-mini-fab color="primary"><span (click)="edit_view(machine)" class="material-icons">edit</span></button>
+                  <button mat-mini-fab color="accent"><span (click)="delete_view(machine.id)" class="material-icons">delete</span></button>
+              </mat-card-actions>
+            </mat-card>
+      </div>
+     
+   
+     
+  </div>
 </div>

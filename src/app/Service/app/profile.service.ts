@@ -9,4 +9,14 @@ import { TokenService } from '../core/authentication/token.service';
 export class ProfileService {
 
   constructor(private http:HttpClient) { }
+  
+  senddata(register) {
+    return this.http.post('tenants/tenant_user_creation',register)
+ }
+ listing(tenantId):Observable<any>{
+   return this.http.get('tenants?tenant_id='+tenantId)
+ }
+ delete_row(id):Observable<any>{
+  return this.http.delete('users/' + id)
+}
 }

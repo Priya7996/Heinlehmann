@@ -10,108 +10,48 @@
             </div>
             <button mat-mini-fab color="primary" (click)="user()"><span class="material-icons">add</span></button>
         </div>
-        <div class="card_wrapper">
+         <div class="card_wrapper">
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let machine of machine_response ;let i=index">
                     <mat-card>
-                        <span class="number">1</span>
-                        <h2>#prodid#123</h2>
-                        <h3>Berkeley Miners</h3>
-                        <span>Controller : 1</span>
-                        <span>Model : BA/M-M123</span>
-                        <span>192:168:0:1</span>
-                        <mat-slide-toggle color="primary"></mat-slide-toggle>
+                        <span class="number">{{i+1}}</span>
+                        <h2>{{machine.machine_name}}</h2>
+                        <h3>{{machine.machine_type}}</h3>
+                        <span>Controller : {{machine.machine_model}}</span>
+                        <span>Model : {{machine.machine_serial_no}}</span>
+                        <span>IP: {{machine.machine_ip}}</span>
+                        <!-- <mat-slide-toggle color="primary"></mat-slide-toggle> -->
+
+                        <div class="action_menus">
+                            <a [matMenuTriggerFor]="menu" class="menu_open">
+                                <i class="material-icons">
+                                    menu_open
+                                </i>
+                            </a>
+                            <mat-menu #menu="matMenu" class="actions">
+                                <button mat-menu-item (click)="edit_view(machine)">
+                                    <!-- <i class="material-icons">
+                                        edit
+                                    </i> -->
+                                    Edit
+                                </button>
+                                <button mat-menu-item (click)="delete_view(machine.id)">
+                                    <!-- <i class="material-icons">
+                                        delete
+                                    </i> -->
+                                    Delete
+                                </button>
+                               
+                            </mat-menu>
+                        </div>
                     </mat-card>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <mat-card>
-                        <span class="number">2</span>
-                        <h2>#prodid#123</h2>
-                        <h3>Berkeley Miners</h3>
-                        <span>Controller : 1</span>
-                        <span>Model : BA/M-M123</span>
-                        <span>192:168:0:1</span>
-                        <mat-slide-toggle color="primary"></mat-slide-toggle>
-                    </mat-card>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <mat-card>
-                        <span class="number">3</span>
-                        <h2>#prodid#123</h2>
-                        <h3>Berkeley Miners</h3>
-                        <span>Controller : 1</span>
-                        <span>Model : BA/M-M123</span>
-                        <span>192:168:0:1</span>
-                        <mat-slide-toggle color="primary"></mat-slide-toggle>
-                    </mat-card>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <mat-card>
-                        <span class="number">4</span>
-                        <h2>#prodid#123</h2>
-                        <h3>Berkeley Miners</h3>
-                        <span>Controller : 1</span>
-                        <span>Model : BA/M-M123</span>
-                        <span>192:168:0:1</span>
-                        <mat-slide-toggle color="primary"></mat-slide-toggle>
-                    </mat-card>
-                </div>
+               
+               
+           
             </div>
-        </div>
+        </div> 
     </div>
-    <div class="col-md-3">
-        <div class="additional-sidebar">
-            <mat-accordion>
-                <mat-expansion-panel>
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Berkeley Miners
-                    </mat-panel-title>
-                  </mat-expansion-panel-header>
-                    <div class="company_names">
-                        <button mat-button>Item 1</button>
-                        <button mat-button>Item 2</button>
-                        <button mat-button>Item 3</button>
-                    </div>
-                </mat-expansion-panel>
-                <mat-expansion-panel (opened)="panelOpenState = true">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            Blender mine
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <div class="company_names">
-                        <button mat-button>Item 1</button>
-                        <button mat-button>Item 2</button>
-                        <button mat-button>Item 3</button>
-                    </div>
-                </mat-expansion-panel>
-                <mat-expansion-panel (opened)="panelOpenState = true">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            Boaring Co
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <div class="company_names">
-                        <button mat-button>Item 1</button>
-                        <button mat-button>Item 2</button>
-                        <button mat-button>Item 3</button>
-                    </div>
-                </mat-expansion-panel>
-                <mat-expansion-panel (opened)="panelOpenState = true">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            Hoarder Co
-                        </mat-panel-title>
-                      </mat-expansion-panel-header>
-                      <div class="company_names">
-                        <button mat-button>Item 1</button>
-                        <button mat-button>Item 2</button>
-                        <button mat-button>Item 3</button>
-                    </div>
-                </mat-expansion-panel>
-              </mat-accordion>
-        </div>
-    </div>
+  
 </div>
 

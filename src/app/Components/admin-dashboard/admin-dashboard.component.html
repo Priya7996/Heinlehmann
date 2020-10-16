@@ -1,68 +1,35 @@
-<div class="title_wrapper">
+<div class="title_wrapper" *ngIf="usertype_id === '1'">
     <h2 class="page_title">Vendor List</h2>
-</div>
-<owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide>
+<owl-carousel-o [options]="customOptions" >
+    <ng-template carouselSlide *ngFor="let machine of back ;let i=index">
         <mat-card class="vendor_card selected" matRipple>
-            <mat-card-header>
+            <mat-card-header (click)="getmachine(machine,machine.id)">
               <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
-              <mat-card-title>Berkeley Miners</mat-card-title>
-              <mat-card-subtitle>Machine 1</mat-card-subtitle>
+              <mat-card-title>{{machine.tenant_name}}</mat-card-title>
+              <mat-card-subtitle>{{machine.city}}</mat-card-subtitle>
             </mat-card-header>
             <img class="tick" src="../../../assets/img/check_circle-24px.svg">
         </mat-card>
     </ng-template>  
-    <ng-template carouselSlide>
-        <mat-card class="vendor_card" matRipple>
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
-              <mat-card-title>Berkeley Miners</mat-card-title>
-              <mat-card-subtitle>Machine 1</mat-card-subtitle>
-            </mat-card-header>
-        </mat-card>
-    </ng-template>  
-    <ng-template carouselSlide>
-        <mat-card class="vendor_card" matRipple>
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
-              <mat-card-title>Berkeley Miners</mat-card-title>
-              <mat-card-subtitle>Machine 1</mat-card-subtitle>
-            </mat-card-header>
-        </mat-card>
-    </ng-template>  
-    <ng-template carouselSlide>
-        <mat-card class="vendor_card" matRipple>
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
-              <mat-card-title>Berkeley Miners</mat-card-title>
-              <mat-card-subtitle>Machine 1</mat-card-subtitle>
-            </mat-card-header>
-        </mat-card>
-    </ng-template>  
-    <ng-template carouselSlide>
-        <mat-card class="vendor_card" matRipple>
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
-              <mat-card-title>Berkeley Miners</mat-card-title>
-              <mat-card-subtitle>Machine 1</mat-card-subtitle>
-            </mat-card-header>
-        </mat-card>
-    </ng-template>  
+   
+   
+    
+   
   </owl-carousel-o>
-
+</div>
 <div class="row sub_header">
     <div class="col-md-12 col-lg-12 col-xl-6">
         <h2 class="page_title">Overview</h2>
     </div>
     <div class="col-md-12 col-lg-12 col-xl-6 text-right">
         <mat-form-field appearance="outline">
-            <mat-label>Machine Name</mat-label>
-            <mat-select>
-              <mat-option>option 1</mat-option>
-              <mat-option>option 1</mat-option>
-              <mat-option>option 1</mat-option>
+            <mat-select placeholder="Select Machine" (selectionChange)="getmachine($event.value)" matNativeControl
+              required >
+              <mat-option *ngFor="let machine of machine_response" [value]="machine.id">
+                {{machine.machine_name}}
+              </mat-option>
             </mat-select>
-        </mat-form-field>
+          </mat-form-field>
         <mat-form-field appearance="outline">
             <input matInput [matDatepicker]="picker" placeholder="Choose a date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

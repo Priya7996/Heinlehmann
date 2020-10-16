@@ -9,4 +9,8 @@ import { TokenService } from '../core/authentication/token.service';
 export class LoginService {
 
   constructor(private http:HttpClient) { }
+
+  signin(login):Observable<any> {
+    return this.http.post('login', login);
+}
 }

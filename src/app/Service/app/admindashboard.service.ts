@@ -9,4 +9,17 @@ import { TokenService } from '../core/authentication/token.service';
 export class AdmindashboardService {
 
   constructor(private http:HttpClient) { }
+
+  listing(tenantId):Observable<any>{
+    return this.http.get('tenants?tenant_id='+tenantId)
+  }
+
+  card(tenantId):Observable<any> {
+    return this.http.get('machines?tenant_id='+tenantId)
+  }
+  card2(id):Observable<any> {
+    return this.http.get('machines?tenant_id='+id)
+  }
+  
+
 }
