@@ -1,23 +1,30 @@
 <div class="title_wrapper" *ngIf="usertype_id === '1'">
     <h2 class="page_title">Vendor List</h2>
-<owl-carousel-o [options]="customOptions" >
-    <ng-template carouselSlide *ngFor="let machine of back ;let i=index">
-        <mat-card class="vendor_card selected" matRipple>
-            <mat-card-header (click)="getmachine(machine,machine.id)">
+
+    <div class="table_search"> 
+        <input class="form-control" type="text" (keyup)="search($event.target.value)" name="search" [(ngModel)]="searchText" placeholder="Search Vendor">
+
+
+      </div>
+      <div class="modal_sec two_form">
+    <div  *ngFor="let machine of back ;let i=index" class="vendor_item">
+        <mat-card class="vendor_card selected" (click)="malok(machine.tenant_name)">
+            <mat-card-header (click)="getmachine(machine,machine.id)" >
               <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
               <mat-card-title>{{machine.tenant_name}}</mat-card-title>
               <mat-card-subtitle>{{machine.city}}</mat-card-subtitle>
             </mat-card-header>
             <img class="tick" src="../../../assets/img/check_circle-24px.svg">
         </mat-card>
-    </ng-template>  
+    </div>  
+
+</div>
    
    
     
    
-  </owl-carousel-o>
 </div>
-<div class="row sub_header">
+<!-- <div class="row sub_header">
     <div class="col-md-12 col-lg-12 col-xl-6">
         <h2 class="page_title">Overview</h2>
     </div>
@@ -36,20 +43,15 @@
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
     </div>
-</div>
+</div> -->
 
-<div class="charts_wrapper">
+<!-- <div class="charts_wrapper">
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6">
             <mat-card class="chart_card">
                 <div class="mat-header">
                   <mat-card-title>Machine Running Time</mat-card-title>
-                  <!-- <mat-card-subtitle>
-                      <span class="circle running active"></span>
-                      <span class="circle stop"></span>
-                      <span class="circle idle"></span>
-                      <span class="circle no-data"></span>
-                  </mat-card-subtitle> -->
+              
                 </div>
                 <mat-card-content>
                     <div class="row no-gutters">
@@ -73,21 +75,14 @@
                         </div>    
                     </div>
                 </mat-card-content>
-                <!-- <mat-card-actions>
-                  <button color="primary" mat-button>Preview</button>
-                </mat-card-actions> -->
+                
               </mat-card>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-6">
             <mat-card class="chart_card">
                 <div class="mat-header">
                   <mat-card-title>Machine Running Time</mat-card-title>
-                  <!-- <mat-card-subtitle>
-                      <span class="circle running active"></span>
-                      <span class="circle stop"></span>
-                      <span class="circle idle"></span>
-                      <span class="circle no-data"></span>
-                  </mat-card-subtitle> -->
+                
                 </div>
                 <mat-card-content>
                     <div class="row no-gutters">
@@ -111,62 +106,18 @@
                         </div>    
                     </div>
                 </mat-card-content>
-                <!-- <mat-card-actions>
-                  <button color="primary" mat-button>Preview</button>
-                </mat-card-actions> -->
+               
               </mat-card>
         </div>
        
-        <!-- <div class="ccol-sm-12 col-md-12 col-lg-6">
-            <mat-card class="chart_card speedo_meter">
-                <div class="mat-header">
-                  <mat-card-title>Machine Running Time</mat-card-title>
-                  <mat-card-subtitle>
-                      <span class="circle running active"></span>
-                      <span class="circle stop"></span>
-                      <span class="circle idle"></span>
-                      <span class="circle no-data"></span>
-                  </mat-card-subtitle>
-                </div>
-                <mat-card-content>
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <mat-card >
-                                <img src="../../../assets/img/Mask Group 12.png" style="width:100%">
-                                <label>Previous day</label>
-                            </mat-card>
-                        </div>    
-                        <div class="col-md-4">
-                            <mat-card >
-                                <img src="../../../assets/img/Mask Group 12.png" style="width:100%">
-                                <label>Today</label>
-                            </mat-card>
-                        </div>    
-                        <div class="col-md-4">
-                            <mat-card >
-                                <img src="../../../assets/img/Mask Group 12.png" style="width:100%">
-                                <label>Next day</label>
-                            </mat-card>
-                        </div>    
-                    </div>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button color="primary" mat-button>Preview</button>
-                </mat-card-actions>
-              </mat-card>
-        </div> -->
+       
     </div>
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-12 col-lg-6">
             <mat-card class="chart_card speedo_meter">
                 <div class="mat-header">
                   <mat-card-title>Machine Running Time</mat-card-title>
-                  <!-- <mat-card-subtitle>
-                      <span class="circle running active"></span>
-                      <span class="circle stop"></span>
-                      <span class="circle idle"></span>
-                      <span class="circle no-data"></span>
-                  </mat-card-subtitle> -->
+              
                 </div>
                 <mat-card-content>
                     <div class="row no-gutters">
@@ -190,11 +141,9 @@
                         </div>    
                     </div>
                 </mat-card-content>
-                <!-- <mat-card-actions>
-                  <button color="primary" mat-button>Preview</button>
-                </mat-card-actions> -->
+              
               </mat-card>
         </div>
 
     </div>
-</div>
+</div> -->

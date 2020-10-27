@@ -141,9 +141,13 @@ h2.page_title {
 .title_wrapper{
     margin-top: 30px;
 }
+// .container-fluid {
+//     // margin-top: 20px;
+//     max-width: 1166px;
+// }
+
 .container-fluid {
-    // margin-top: 20px;
-    max-width: 1166px;
+    max-width: 100%;
 }
 button:focus{
     outline: none;

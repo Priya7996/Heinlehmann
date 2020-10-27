@@ -34,8 +34,12 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('tenant_id',res.tenant_id);
       if (res === false) {
         alert('The Username or Password is incorrect')
-      } else {
+      } else if(res.usertype_id === 1){
         this.route.navigateByUrl('/admin_dashboard');
+      }
+      else {
+        this.route.navigateByUrl('/user');
+
       }
     
       localStorage.setItem('usertype_id',res.usertype_id);

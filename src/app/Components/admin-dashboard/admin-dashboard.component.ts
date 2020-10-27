@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarService} from '../../Nav/navbar.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AdmindashboardService } from '../../Service/app/admindashboard.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -13,7 +14,7 @@ export class AdminDashboardComponent implements OnInit {
   tenant:any;
   back:any;
   machine_response: any;
-  constructor(private nav:NavbarService,private service:AdmindashboardService) { 
+  constructor(private nav:NavbarService,private service:AdmindashboardService,private route:Router) { 
      this.nav.show();
      this.usertype_id = localStorage.getItem('usertype_id');
      console.log(this.usertype_id);
@@ -25,6 +26,11 @@ export class AdminDashboardComponent implements OnInit {
 
     this.service.listing(this.tenant).subscribe(res =>{
       this.back = res;
+      for(let i=0; i<this.back.length; i++){
+        console.log(this.back[i].tenant_name)
+        
+    }
+
       console.log( this.back);
  
  
@@ -35,7 +41,14 @@ export class AdminDashboardComponent implements OnInit {
     this.machine_response=res;
     })
   }
+  malok(blok){
+    console.log(blok);
+    localStorage.setItem('tenantinner_name',blok);
+    this.route.navigateByUrl('/dashboard');
 
+
+
+  }
   getmachine(machine,id){
    console.log(machine)
    console.log(id)
@@ -44,33 +57,5 @@ export class AdminDashboardComponent implements OnInit {
     })
 
     }
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true, 
-    margin:20,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 700,
-    // nav:true,
-    navText: ["<span class='material-icons'>chevron_left</span>", "<span class='material-icons'>chevron_right</span>"],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 4
-      },
-      1366: {
-        items: 6
-      }
-    },
-    nav: true
-  }
+ 
 }

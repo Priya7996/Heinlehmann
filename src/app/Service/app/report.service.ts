@@ -9,4 +9,8 @@ import { TokenService } from '../core/authentication/token.service';
 export class ReportService {
 
   constructor(private http:HttpClient) { }
+
+  card(tenantId):Observable<any> {
+    return this.http.get('machines?tenant_id='+tenantId)
+  }
 }

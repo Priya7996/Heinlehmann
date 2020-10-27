@@ -1,3 +1,24 @@
+.table_search{
+    float: right;
+    margin-left: 10px;
+    margin-top: -62px;
+    ::placeholder {
+        color: #565656;
+        opacity: 1; /* Firefox */
+      }
+    .form-control{
+        font-size: 16px !important;
+        border: 1px solid #8c8c8c;
+        border-radius: 0;
+        padding: 0.375rem 0.75rem;
+        height: 38px;
+        &:focus{
+            outline: none;
+            box-shadow: unset;
+        }
+    }
+    
+}
 .mat-card-avatar {
     height: 42px;
     width: 42px;
@@ -126,4 +147,15 @@ mat-card-actions{
     button{
         margin-bottom: 15px;
     }
+}
+
+.modal_sec.two_form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+.vendor_item {
+    width: 24%;
+    margin-right: 14px;
+}
 }

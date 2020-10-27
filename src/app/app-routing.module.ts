@@ -12,6 +12,7 @@ const routes: Routes = [
 { path: 'machine-detail', loadChildren: () => import('./Components/machine-detail/machine-detail.module').then(m => m.MachineDetailModule) },
 { path: 'report', loadChildren: () => import('./Components/report/report.module').then(m => m.ReportModule) },
 { path: 'notify', loadChildren: () => import('./Components/notify/notify.module').then(m => m.NotifyModule) },
+{ path: 'dashboard', loadChildren: () => import('./Components/dashboard/dashboard.module').then(m => m.DashboardModule) },
  ];
 
 @NgModule({
