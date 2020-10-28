@@ -11,6 +11,8 @@ import { MatButtonModule,MatMenuModule,MatIconModule,MatInputModule,MatCardModul
          MatButtonToggleModule,MatToolbarModule,MatTooltipModule,MatRippleModule } from '@angular/material';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { MatNativeDateModule } from '@angular/material/core';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 // import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { Tokentinterceptor} from '../../Service/core/http/tokentinterceptor';
 
@@ -24,7 +26,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ,MatExpansionModule,MatGridListModule,MatStepperModule,MatTooltipModule,
     MatTreeModule,MatButtonToggleModule,MatSnackBarModule,MatTabsModule,
     MatDialogModule,MatTableModule,MatDatepickerModule,MatCheckboxModule, 
-    CommonModule,MatToolbarModule,MatPaginatorModule,MatRippleModule
+    CommonModule,MatToolbarModule,MatPaginatorModule,MatRippleModule,Ng2SearchPipeModule
   ],
   exports:[FormsModule, ReactiveFormsModule,MatButtonModule,MatMenuModule,
     MatIconModule,MatInputModule,MatCardModule,MatFormFieldModule,MatListModule,
@@ -33,7 +35,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     ,MatExpansionModule,MatGridListModule,MatStepperModule,MatTooltipModule,
     MatTreeModule,MatButtonToggleModule,MatSnackBarModule,MatTabsModule,
     MatDialogModule,MatTableModule,MatDatepickerModule,MatCheckboxModule, 
-    CommonModule,MatToolbarModule,MatPaginatorModule
+    CommonModule,MatToolbarModule,MatPaginatorModule,Ng2SearchPipeModule
   ],
 
   // providers: [

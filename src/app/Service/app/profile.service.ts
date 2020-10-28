@@ -19,4 +19,10 @@ export class ProfileService {
  delete_row(id):Observable<any>{
   return this.http.delete('users/' + id)
 }
+putdata(id,val):Observable<any>{
+  return this.http.put('usersi/'+id,val)
+}
+// edit(id,val):Observable<any> {
+//   return this.http.put('users/'+id,val)
+// }
 }

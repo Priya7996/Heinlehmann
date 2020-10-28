@@ -2,13 +2,13 @@
     <h2 class="page_title">Vendor List</h2>
 
     <div class="table_search"> 
-        <input class="form-control" type="text" (keyup)="search($event.target.value)" name="search" [(ngModel)]="searchText" placeholder="Search Vendor">
+        <input class="form-control" type="text"  name="search" [(ngModel)]="searchText" placeholder="Search Vendor">
 
 
       </div>
       <div class="modal_sec two_form">
-    <div  *ngFor="let machine of back ;let i=index" class="vendor_item">
-        <mat-card class="vendor_card selected" (click)="malok(machine.tenant_name)">
+    <div  *ngFor="let machine of back  | filter : searchText , let i=index " class="vendor_item">
+        <mat-card class="vendor_card selected" (click)="malok(machine.tenant_name,machine.id)">
             <mat-card-header (click)="getmachine(machine,machine.id)" >
               <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
               <mat-card-title>{{machine.tenant_name}}</mat-card-title>

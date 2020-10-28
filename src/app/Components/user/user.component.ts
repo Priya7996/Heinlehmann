@@ -5,7 +5,7 @@ import { Component, OnInit,Inject} from '@angular/core';
  import { FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
  import Swal from 'sweetalert2';
  import { untilDestroyed } from 'ngx-take-until-destroy';
-@Component({
+ @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
@@ -46,16 +46,16 @@ export class UserComponent implements OnInit {
         }).then((destroy) => {
           if (destroy.value) {
             this.service.delete_row(id).pipe(untilDestroyed(this)).subscribe(res => {
-               if(res === true)
-              {
-                Swal.fire("Deleted Succesfully !")
-              }
-              else{
-                Swal.fire("Delete Failed")
-              }
-              
-              this.ngOnInit()
-            })
+              if(res === true)
+             {
+               Swal.fire("Deleted Succesfully !")
+             }
+             else{
+               Swal.fire("Delete Failed")
+             }
+             
+             this.ngOnInit()
+           })
           }
         })
       }

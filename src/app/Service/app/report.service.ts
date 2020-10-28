@@ -13,4 +13,7 @@ export class ReportService {
   card(tenantId):Observable<any> {
     return this.http.get('machines?tenant_id='+tenantId)
   }
+  vendor(tenantId):Observable<any>{
+    return this.http.get('tenants?tenant_id='+tenantId)
+  }
 }

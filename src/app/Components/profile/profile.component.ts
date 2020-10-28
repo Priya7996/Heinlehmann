@@ -182,7 +182,15 @@ export class Edit {
   hide: boolean = true;
   roles_list: any;
   back_list: any;
-  constructor(public dialogRef: MatDialogRef<Edit>, @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder,private service:ProfileService ) {}
+  value:any;
+  constructor(public dialogRef: MatDialogRef<Edit>, @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder,private service:ProfileService ) {
+    this.value = data;
+    console.log(this.value);
+    this.tenant = localStorage.getItem('tenant_id');
+    this.user = localStorage.getItem('usertype_id')
+    this.approval = localStorage.getItem('approval_id')
+    this.role = localStorage.getItem('role_id');
+  }
 
   cancel() {
     this.dialogRef.close();
@@ -201,8 +209,8 @@ export class Edit {
 
     this.login=this.fb.group({
 
-      first_name:["",Validators.required],last_name:["",Validators.required], email_id:["",Validators.email],password:["",Validators.required], phone_number:["",Validators.required], remarks:["",Validators.required], tenant_name:["",Validators.required],address_line1:["",Validators.required], address_line2:["",Validators.required],
-      city:["",Validators.required], state:["",Validators.required],country:["",Validators.required], pincode:["",Validators.required]
+      first_name:[this.value.users[0].first_name],last_name:[this.value.users[0].last_name], email_id:[this.value.users[0].email_id],password:[this.value.users[0].password], phone_number:[this.value.users[0].phone_number], remarks:[this.value.users[0].remarks], tenant_name:[this.value.tenant_name],address_line1:[this.value.address_line1], address_line2:[this.value.address_line2],
+      city:[this.value.city], state:[this.value.state],country:[this.value.country], pincode:[this.value.users[0].tenant.pincode]
 
 })
 
@@ -211,13 +219,11 @@ export class Edit {
   logintest() {
     this.add_val=this.login.value;
     this.add_val["tenant_id"] =this.tenant;
-    this.add_val["usertype_id"] =this.user;
-    this.add_val["approval_id"] =this.approval;
-    this.add_val["role_id"] =this.role;
+    
     console.log(this.add_val);
 
   
-    this.service.senddata(this.login.value).subscribe(res =>{
+    this.service.putdata(this.value.id,this.add_val).subscribe(res =>{
     
       if (res === true) {
        Swal.fire('Thank You for registering with Yantra24x7')

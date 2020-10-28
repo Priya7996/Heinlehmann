@@ -13,7 +13,7 @@
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let machine of back ;let i=index">
             <mat-card class="text-center" >
                    <div class="image_warpper">
-                    <img src="../../../assets/img/Ellipse 51.png">
+                    <img src="../../../assets/img/Ellipse 52.png">
                    </div> 
                   <mat-card-title>{{machine.users[0].tenant.tenant_name}}</mat-card-title>
                   <mat-card-subtitle>{{machine.city}}</mat-card-subtitle>
@@ -22,10 +22,10 @@
                   <span>{{machine.users[0].email_id}}</span>
                   <span>{{machine.users[0].phone_number}}</span>
                 </mat-card-content>
-                <!-- <mat-card-actions>
+                <mat-card-actions>
                     <button mat-mini-fab color="primary"><span (click)="edit_view(machine)" class="material-icons">edit</span></button>
                     <button mat-mini-fab color="accent"><span (click)="delete_view(machine.id)" class="material-icons">delete</span></button>
-                </mat-card-actions> -->
+                </mat-card-actions>
               </mat-card>
         </div>
        

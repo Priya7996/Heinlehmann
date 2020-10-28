@@ -17,7 +17,10 @@ export class UserService {
  listing(tenantId):Observable<any>{
    return this.http.get('users?tenant_id='+tenantId)
  }
- delete_row(id):Observable<any>{
+//  delete_row(id){
+//  this.http.delete('users/' + id)
+// }
+delete_row(id):Observable<any>{
   return this.http.delete('users/' + id)
 }
 
