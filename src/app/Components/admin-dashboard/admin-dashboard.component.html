@@ -1,4 +1,8 @@
-<div class="title_wrapper" *ngIf="usertype_id === '1'">
+<div>
+    <div *ngIf="myLoader" class="spinner">
+        <img src="../../../assets/img/spinner.gif">
+    </div>
+    <div class="title_wrapper" *ngIf="usertype_id === '1'">
     <h2 class="page_title">Vendor List</h2>
 
     <div class="table_search"> 
@@ -7,7 +11,7 @@
 
       </div>
       <div class="modal_sec two_form">
-    <div  *ngFor="let machine of back  | filter : searchText , let i=index " class="vendor_item">
+    <div  *ngFor="let machine of back ;let i=index " class="vendor_item">
         <mat-card class="vendor_card selected" (click)="malok(machine.tenant_name,machine.id)">
             <mat-card-header (click)="getmachine(machine,machine.id)" >
               <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
@@ -24,6 +28,9 @@
     
    
 </div>
+
+</div>
+
 <!-- <div class="row sub_header">
     <div class="col-md-12 col-lg-12 col-xl-6">
         <h2 class="page_title">Overview</h2>

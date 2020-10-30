@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule} from '../shared/shared.module';
-// import { DatePipe } from '@angular/common';
+
 import { AdminDashboardComponent } from './admin-dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AdmindashboardService} from '../../Service/app/admindashboard.service'
@@ -14,7 +14,6 @@ const routes: Routes = [{ path: '', component: AdminDashboardComponent }];
 @NgModule({
   declarations: [AdminDashboardComponent],
   imports: [RouterModule.forChild(routes),
-,
     CommonModule,SharedModule,CarouselModule,MatRippleModule
     
   ],

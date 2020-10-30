@@ -14,6 +14,8 @@ export class UserComponent implements OnInit {
   picker:any;
   tenant:any;
   back:any;
+  myLoader= false;
+
   constructor(private nav:NavbarService,private service:UserService,public dialog: MatDialog) {
      this.nav.show();
      this.tenant = localStorage.getItem('tenant_id')
@@ -45,7 +47,11 @@ export class UserComponent implements OnInit {
           title: 'Please Confirm'
         }).then((destroy) => {
           if (destroy.value) {
+            this.myLoader= true;
+
             this.service.delete_row(id).pipe(untilDestroyed(this)).subscribe(res => {
+              this.myLoader= false;
+
               if(res === true)
              {
                Swal.fire("Deleted Succesfully !")
@@ -75,9 +81,12 @@ export class UserComponent implements OnInit {
     });
   }
   ngOnInit() {
+    this.myLoader= true;
 
     this.service.listing(this.tenant).subscribe(res =>{
       this.back = res;
+      this.myLoader= false;
+
       console.log( this.back);
     })
   }
@@ -107,6 +116,8 @@ export class User {
   approval: string;
   back: any;
   role: any;
+  myLoader= false;
+
   add_val: any;
   show_status: any;
   hide: boolean = true;
@@ -155,11 +166,13 @@ export class User {
     this.add_val["role_id"] =this.role;
     console.log(this.add_val);
 
-  
+    this.myLoader= true;
+
     this.service.senddata(this.add_val).subscribe(res =>{
     
        Swal.fire('Created Successfully')
-     
+       this.myLoader= false;
+
      this.dialogRef.close();
 
     })
@@ -188,6 +201,8 @@ export class Edit {
   approval: string;
   back: any;
   role: any;
+  myLoader= false;
+
   add_val: any;
   show_status: any;
   hide: boolean = true;
@@ -232,10 +247,13 @@ export class Edit {
   logintest() {
     this.add_val = this.login.value
     this.add_val["tenant_id"] = this.tenant;
-   
+    this.myLoader= true;
+
     this.service.edit(this.edit_data.id, this.add_val).pipe(untilDestroyed(this)).subscribe(res => {
     
       Swal.fire("Updated Successfully!")
+      this.myLoader= false;
+
       this.dialogRef.close();
     })
 

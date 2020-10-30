@@ -15,6 +15,7 @@ export class MachineListComponent implements OnInit {
   panelOpenState:any;
   machine_response: any;
   tenant: string;
+  myLoader= false;
   constructor(private nav:NavbarService,public dialog: MatDialog,private service:MachinelistService) {
      this.nav.show();
      this.tenant=localStorage.getItem('tenant_id')
@@ -47,10 +48,13 @@ export class MachineListComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.myLoader= true;
     this.service.card(this.tenant).pipe(untilDestroyed(this)).subscribe(res => {
 
-      this.machine_response=res;
+      this.machine_response=res;  
+      this.myLoader= false;
+
+
     })
   }
   delete_view(id) {
@@ -66,7 +70,11 @@ export class MachineListComponent implements OnInit {
           title: 'Please Confirm'
         }).then((destroy) => {
           if (destroy.value) {
+            this.myLoader = true;
+
             this.service.delete_row(id).pipe(untilDestroyed(this)).subscribe(res => {
+              this.myLoader = false;
+
                if(res === true)
               {
                 Swal.fire("Deleted Succesfully !")
@@ -105,6 +113,7 @@ export class User {
   back: any;
   role: any;
   add_val: any;
+  myLoader= false;
   show_status: any;
   hide: boolean = true;
   roles_list: any;
@@ -149,8 +158,9 @@ export class User {
 
     this.add_val["tenant_id"] = this.tenant
     this.add_val["controller_type"]=this.controller_type;
-
+    this.myLoader= true;
    this.service.machine(this.login.value).pipe(untilDestroyed(this)).subscribe(res => {
+    this.myLoader= false;
      alert('created successfully')
      this.dialogRef.close();
 
@@ -176,7 +186,7 @@ export class User {
 export class Edit {
   edit_data:any;
   login: any;
-
+  myLoader= false;
   tenant: any;
   add_val: any;
   edit_data1:any;
@@ -213,7 +223,9 @@ export class Edit {
   {
     this.add_val = this.login.value 
     this.add_val["tenant_id"] = this.tenant;
+    this.myLoader= true;
     this.service.edit(this.edit_data1.id,this.add_val).pipe(untilDestroyed(this)).subscribe(res => {
+      this.myLoader= false;
       Swal.fire("Updated Successfully!")
       if(res === true){
         Swal.fire("Updated Suceesfully")

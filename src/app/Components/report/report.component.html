@@ -1,7 +1,11 @@
+<div>
+  <div *ngIf="myLoader" class="spinner">
+    <img src="../../../assets/img/spinner.gif">
+</div>
 <form [formGroup]="login" (ngSubmit)="logintest()">
 <div *ngIf="usertype_id === '1'">
   <mat-form-field appearance="outline">
-    <mat-select placeholder="Select Vendor" (selectionChange)="getsplit($event.value)"  matNativeControl formControlName="vendor_id"
+    <mat-select placeholder="Select Vendor" (selectionChange)="getsplit($event.value)"  matNativeControl formControlName="tenant_id"
       required >
       <mat-option *ngFor="let vendor of vendaor_name" [value]="vendor.id">
         {{vendor.tenant_name}}
@@ -75,3 +79,5 @@
         <td></td>
     </tr>
 </table>
+
+</div>

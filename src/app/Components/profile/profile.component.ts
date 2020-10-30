@@ -15,6 +15,7 @@ import { untilDestroyed } from 'ngx-take-until-destroy';
 export class ProfileComponent implements OnInit {
   tenant:any;
   back:any;
+  myLoader= false;
   constructor(private nav:NavbarService,public dialog: MatDialog,private service:ProfileService) {
      this.nav.show();
      this.tenant = localStorage.getItem('tenant_id')
@@ -46,7 +47,9 @@ export class ProfileComponent implements OnInit {
           title: 'Please Confirm'
         }).then((destroy) => {
           if (destroy.value) {
+           this.myLoader= true;
             this.service.delete_row(id).pipe(untilDestroyed(this)).subscribe(res => {
+              this.myLoader= false;
                if(res === true)
               {
                 Swal.fire("Deleted Succesfully !")
@@ -75,8 +78,9 @@ export class ProfileComponent implements OnInit {
     });
   }
   ngOnInit() {
-
+   this.myLoader= true;
    this.service.listing(this.tenant).subscribe(res =>{
+    this.myLoader= false;
      this.back = res;
      console.log( this.back);
 
@@ -105,6 +109,7 @@ export class User {
   user: string;
   approval: string;
   back: any;
+  myLoader= false;
   role: any;
   add_val: any;
   show_status: any;
@@ -146,8 +151,9 @@ export class User {
     this.add_val["role_id"] =this.role;
     console.log(this.add_val);
 
-  
+    this.myLoader= true;
     this.service.senddata(this.login.value).subscribe(res =>{
+    this.myLoader= false;
     
       if (res === true) {
        Swal.fire('Created Successfully')
@@ -182,6 +188,7 @@ export class Edit {
   hide: boolean = true;
   roles_list: any;
   back_list: any;
+  myLoader= false;
   value:any;
   constructor(public dialogRef: MatDialogRef<Edit>, @Inject(MAT_DIALOG_DATA) public data: any, private fb: FormBuilder,private service:ProfileService ) {
     this.value = data;
@@ -222,8 +229,9 @@ export class Edit {
     
     console.log(this.add_val);
 
-  
+    this.myLoader= true;
     this.service.putdata(this.value.id,this.add_val).subscribe(res =>{
+      this.myLoader= false;
     
       if (res === true) {
        Swal.fire('Thank You for registering with Yantra24x7')
