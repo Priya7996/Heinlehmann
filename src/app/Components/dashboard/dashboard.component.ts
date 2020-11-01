@@ -32,16 +32,28 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
     this.login = this.fb.group({
       machine_id:["",Validators.email],
       date:["",Validators.required]
 
     })
-
+  if(this.usertype_id === '1'){
+    console.log(this.tenant_id);
     this.service.card(this.tenant_id).subscribe(res => {
       this.machine_response=res;
       })
+    }
+    else{
+     this.service.card(this.tenant).subscribe(res => {
+        this.machine_response=res;
+        })
+    }
+
+  }
+  refresh(){
+    location.reload()
+
   }
   logintest(){
     this.myLoader= true;

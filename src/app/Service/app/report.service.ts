@@ -21,7 +21,7 @@ export class ReportService {
   display(register):Observable<any>{
    
   
-    return this.http.get('dashboard_analytics_report?machine_id=' + register.machine_id + '&&tenant_id='  + register.tenant_id + '&&start_date=' + register.start_date + '&&end_date=' + register.end_date)
+    return this.http.get('machine_analytics_report?machine_id=' + register.machine_id + '&&tenant_id='  + register.tenant_id + '&&start_date=' + register.start_date + '&&end_date=' + register.end_date)
   }
 }
 

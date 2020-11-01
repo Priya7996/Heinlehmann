@@ -20,6 +20,7 @@ export class ReportComponent implements OnInit {
   myLoader= false;
   new_date:any;
   new_date1:any;
+  report: any;
   constructor(private nav:NavbarService,private fb:FormBuilder,private service:ReportService,private route:Router,private datepipe:DatePipe) {
     this.nav.show();
     this.tenant = localStorage.getItem('tenant_id')
@@ -38,7 +39,11 @@ export class ReportComponent implements OnInit {
 
 
     })
+    this.service.card(this.tenant).subscribe(res => {
+      this.machine_response=res;
+      this.myLoader= false;
 
+      })
  
     this.myLoader= true;
 
@@ -79,8 +84,14 @@ export class ReportComponent implements OnInit {
     }
 
     console.log(register)
+    this.myLoader= true;
+
     this.service.display(register).subscribe(res => {
-      console.log(res);
+      this.report = res;
+      this.myLoader= false;
+
+      console.log( this.report);
+
     })
 
   }

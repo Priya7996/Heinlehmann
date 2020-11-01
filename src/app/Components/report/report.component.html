@@ -57,27 +57,31 @@
         <th>Machine Name</th>
         <th>Vendor Name</th>
         <th>Machine Running Time</th>
-        <th>EBH Temperature Drive End</th>
-        <th>EBH Temperature Non-Drive End</th>
-        <th>Rubber Buffer Level L</th>
-        <th>Rubber Buffer Level R</th>
-        <th>Inclination Spring Level L</th>
-        <th>Inclination Spring Level R</th>
+        <th>EBH Temperature Drive End (MIN and MAx )</th>
+        <th>EBH Temperature Non-Drive End (MIN and MAX)</th>
+        <th>Rubber Buffer Level L (MIN and MAX )</th>
+        <th>Rubber Buffer Level R (MIN  and MAX)</th>
+        <th>Inclination Spring Level L (MIN and MAX)</th>
+        <th>Inclination Spring Level R (MIN and MAX)</th>
     </tr>
 
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+    <tr *ngFor="let table of report ;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{table.date}}</td>
+        <td>{{table.machine_name}}</td>
+        <td>{{table.vendor_name}}</td>
+        <td>{{table.actual_working_hours}}</td>
+        <td>{{table.temp_and_buffer.ebh_temp_drive_end.min.value}} - {{table.temp_and_buffer.ebh_temp_drive_end.max.value}}</td>
+        <td>{{table.temp_and_buffer.ebh_temp_nondrive_end.min.value}} - {{table.temp_and_buffer.ebh_temp_nondrive_end.max.value}}</td>
+
+        <td>{{table.temp_and_buffer.buffer_level_l.min.value}} - {{table.temp_and_buffer.buffer_level_l.max.value}}</td>
+        <td>{{table.temp_and_buffer.buffer_level_r.min.value}} - {{table.temp_and_buffer.buffer_level_r.max.value}}</td>
+        <td>{{table.temp_and_buffer.spring_level_l.min.value}} - {{table.temp_and_buffer.spring_level_l.max.value}}</td>
+        <td>{{table.temp_and_buffer.spring_level_r.min.value}} - {{table.temp_and_buffer.spring_level_r.max.value}}</td>
     </tr>
 </table>
+<div *ngIf="report?.length==0" class="no_data_found">
+  <h6>No Data found</h6>
+</div>
 
 </div>
