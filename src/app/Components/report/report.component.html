@@ -2,7 +2,7 @@
   <div *ngIf="myLoader" class="spinner">
     <img src="../../../assets/img/spinner.gif">
 </div>
-<form [formGroup]="login" (ngSubmit)="logintest()">
+<form [formGroup]="login" (ngSubmit)="logintest()" class="report_form">
 <div *ngIf="usertype_id === '1'">
   <mat-form-field appearance="outline">
     <mat-select placeholder="Select Vendor" (selectionChange)="getsplit($event.value)"  matNativeControl formControlName="tenant_id"
@@ -13,7 +13,7 @@
     </mat-select>
   </mat-form-field>
 </div>
-
+<div class="select_machine">
     <mat-form-field appearance="outline">
         <mat-select placeholder="Select Machine"  matNativeControl formControlName="machine_id"
           required >
@@ -24,6 +24,7 @@
       </mat-form-field>
       <div *ngIf="machine_response?.length==0" class="no_data_found">
         <h6>No Machine found</h6>
+      </div>
       </div>
 
       <!-- <mat-form-field appearance="outline">
@@ -56,13 +57,13 @@
         <th>Date</th>
         <th>Machine Name</th>
         <th>Vendor Name</th>
-        <th>Machine Running Time</th>
-        <th>EBH Temperature Drive End (MIN and MAx )</th>
-        <th>EBH Temperature Non-Drive End (MIN and MAX)</th>
-        <th>Rubber Buffer Level L (MIN and MAX )</th>
-        <th>Rubber Buffer Level R (MIN  and MAX)</th>
-        <th>Inclination Spring Level L (MIN and MAX)</th>
-        <th>Inclination Spring Level R (MIN and MAX)</th>
+        <th>Machine Running Time (HH:MM:SS)</th>
+        <th>EBH Temperature Drive End MIN and MAX value (°C)</th>
+        <th>EBH Temperature Non-Drive End MIN and MAX Value(°C)</th>
+        <th>Rubber Buffer Level L MIN and MAX Value (mm)</th>
+        <th>Rubber Buffer Level R MIN  and MAX Value (mm)</th>
+        <th>Inclination Spring Level L MIN and MAX Value (mm)</th>
+        <th>Inclination Spring Level R MIN and MAX Value (mm)</th>
     </tr>
 
     <tr *ngFor="let table of report ;let i=index">
