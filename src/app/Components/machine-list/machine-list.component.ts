@@ -146,8 +146,8 @@ export class User {
       unit:["",Validators.required],
       device_id:["",Validators.required],
       controller_type:["",Validators.required],
-      border_rate:["",],
-      t1_ip:["",]
+      // border_rate:["",],
+      // t1_ip:["",]
      
     })
 
@@ -210,8 +210,8 @@ export class Edit {
       device_id:[this.edit_data1.device_id],
       unit:[this.edit_data1.unit],
       controller_type:[this.edit_data1.controller_type],
-      border_rate:[this.edit_data1.controller_type],
-      t1_ip:[this.edit_data1.controller_type]
+      // border_rate:[this.edit_data1.controller_type],
+      // t1_ip:[this.edit_data1.controller_type]
 
     })
   }

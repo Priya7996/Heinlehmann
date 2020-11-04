@@ -51,10 +51,9 @@ export class DashboardComponent implements OnInit {
     }
 
   }
-  refresh(){
-    location.reload()
-
-  }
+  // refresh(){
+  //   location.reload();
+  // }
   logintest(){
     this.myLoader= true;
 

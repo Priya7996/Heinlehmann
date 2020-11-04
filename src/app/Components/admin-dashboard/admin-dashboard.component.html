@@ -1,33 +1,32 @@
-<div>
+<div class="page_sec">
     <div *ngIf="myLoader" class="spinner">
         <img src="../../../assets/img/spinner.gif">
     </div>
     <div class="title_wrapper" *ngIf="usertype_id === '1'">
-    <h2 class="page_title">Vendor List</h2>
+        <h2 class="page_title">Vendor List</h2>
+        <!-- <div class="table_search">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+        </div> -->
+    </div>
+    <div class="modal_sec two_form">
+        <div *ngFor="let machine of back ;let i=index " class="vendor_item">
+            <mat-card class="vendor_card selected" (click)="malok(machine.tenant_name,machine.id)">
+                <mat-card-header (click)="getmachine(machine,machine.id)">
+                    <div mat-card-avatar class="example-header-image"
+                        style="background-image: url('../../../assets/img/Ellipse\ 52.png');"></div>
+                    <mat-card-title>{{machine.tenant_name}}</mat-card-title>
+                    <mat-card-subtitle>{{machine.city}}</mat-card-subtitle>
+                </mat-card-header>
+                <img class="tick" src="../../../assets/img/check_circle-24px.svg">
+            </mat-card>
+        </div>
 
-    <div class="table_search"> 
-        <input class="form-control" type="text"  name="search" [(ngModel)]="searchText" placeholder="Search Vendor">
+        <!-- </div> -->
 
 
-      </div>
-      <div class="modal_sec two_form">
-    <div  *ngFor="let machine of back ;let i=index " class="vendor_item">
-        <mat-card class="vendor_card selected" (click)="malok(machine.tenant_name,machine.id)">
-            <mat-card-header (click)="getmachine(machine,machine.id)" >
-              <div mat-card-avatar class="example-header-image" style="background-image: url('../../../assets/img/Ellipse\ 51.jpg');"></div>
-              <mat-card-title>{{machine.tenant_name}}</mat-card-title>
-              <mat-card-subtitle>{{machine.city}}</mat-card-subtitle>
-            </mat-card-header>
-            <img class="tick" src="../../../assets/img/check_circle-24px.svg">
-        </mat-card>
-    </div>  
 
-</div>
-   
-   
-    
-   
-</div>
+
+    </div>
 
 </div>
 

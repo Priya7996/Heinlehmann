@@ -1,29 +1,28 @@
-<div class="row">
+<div class="page_sec">
 
     <div *ngIf="myLoader" class="spinner">
         <img src="../../../assets/img/spinner.gif">
     </div>
-    <div class="col-md-9">
-        <div class="flex_between">
-            <div class="d-flex align-items-center title_wrapper">
-                <h2 class="page_title">Machine List</h2>
-                <!-- <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <div class="title_wrapper">
+        <h2 class="page_title">Machine List</h2>
+        <!-- <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
                     <mat-button-toggle value="bold"><span class="material-icons">border_all</span></mat-button-toggle>
                     <mat-button-toggle value="italic"><span class="material-icons">format_list_bulleted</span></mat-button-toggle>
                 </mat-button-toggle-group> -->
-            </div>
-            <button mat-mini-fab color="primary" (click)="user()"><span class="material-icons">add</span></button>
-        </div>
-         <div class="card_wrapper">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let machine of machine_response ;let i=index">
-                    <mat-card>
+        <button mat-mini-fab color="primary" (click)="user()"><span class="material-icons">add</span></button>
+    </div>
+
+    <div class="container-fluid card_wrapper machine_list">
+        <div class="row">
+            <div class="modal_sec two_form">
+                <div *ngFor="let machine of machine_response ;let i=index" class="vendor_item">
+                    <mat-card class="vendor_card text-center">
                         <span class="number">{{i+1}}</span>
                         <h2>{{machine.machine_name}}</h2>
                         <h3>{{machine.machine_type}}</h3>
-                        <span>Controller : {{machine.machine_model}}</span>
-                        <span>Model : {{machine.machine_serial_no}}</span>
-                        <span>IP: {{machine.machine_ip}}</span>
+                        <p>Controller : <span>   {{machine.machine_model}}   </span></p>
+                        <p>Model : <span> {{machine.machine_serial_no}} </span></p>
+                        <p>IP : <span>   {{machine.machine_ip}}  </span></p>
                         <!-- <mat-slide-toggle color="primary"></mat-slide-toggle> -->
 
                         <div class="action_menus">
@@ -45,17 +44,15 @@
                                     </i> -->
                                     Delete
                                 </button>
-                               
+
                             </mat-menu>
                         </div>
                     </mat-card>
                 </div>
-               
-               
-           
             </div>
-        </div> 
-    </div>
-  
-</div>
 
+
+        </div>
+    </div>
+
+</div>

@@ -163,3 +163,326 @@ button:focus{
         margin: 0!important;
     }
   }
+
+
+//   Custom styles
+
+::-webkit-scrollbar {
+    width: 7px;
+    background: 0 0
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2e2e2e;
+    border: 1px solid #fff;
+    border-width: 1px 0;
+    border-radius: 0
+}
+
+::-webkit-scrollbar-track {
+    background: #ececec;
+    width: 0;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid rgba(0, 0, 0, .3)
+}
+
+.table_search{
+    ::placeholder {
+        color: #565656;
+        opacity: 1; /* Firefox */
+      }
+    .form-control{
+        font-size: 14px;
+        border: 1px solid #8c8c8c;
+        border-radius: 0;
+        padding: 0.375rem 0.75rem;
+        height: 36px;
+        &:focus{
+            outline: none;
+            box-shadow: unset;
+        }
+    }
+    
+}
+.table {
+    thead{
+        th {
+            vertical-align: baseline;
+        }
+    }
+}
+// Modal 
+.btn_orange{
+    border: 1px solid #f69320;
+    background: #f69320;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    line-height: normal;
+}
+mat-dialog-container {
+    position: relative;
+}
+.modal_sec{
+    .modal_heading{
+        h3{
+            font-size: 20px;
+            font-weight: 600;
+            color: #221616;
+            margin-bottom: 15px;
+        }
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+        }
+
+    }
+    .dialog-form {
+        width: 100%;
+        padding: 15px;
+    }
+    mat-form-field {
+        width: 48%;
+        &:nth-child(odd){
+            margin-right: 10px;
+        }
+    }
+    .modal_button{
+        text-align: right;
+    }
+
+.scroll_form {
+        min-height: 450px;
+        width: 100%;
+        padding: 15px;
+        overflow-y: scroll;
+        height: 428px;
+    }
+    
+}
+
+// Report page
+.page_title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #363636;
+    margin-bottom: 0;
+}
+
+.page_sec {
+    padding: 20px 0;
+    .report_form {
+         -webkit-align-items: center;
+     -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+       align-items: center;
+            -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+     display: flex;
+        margin-bottom: 15px;
+        .select_machine{
+            position: relative;
+            display: block;
+            .no_data_found {
+                position: absolute;
+                bottom: 0px;
+                h6 {
+                    font-weight: 300;
+                    font-size: 12px;
+                    color: #ad0707;
+                }
+            }
+        }  
+    }
+    .table td, .table th {
+        font-size: 14px;
+    }
+    .filter_btn {
+        border: 1px solid #f69320;
+        background: #f69320;
+        padding: 10px 20px;
+        font-size: 14px;
+        color: #fff;
+        border-radius: 5px;
+        line-height: normal;
+    }
+}
+.mat-card-title {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+mat-card{
+    margin: 0 15px 15px 0;
+}
+
+.mat-toolbar-multiple-rows{
+    background: #e2e0e0;
+}
+.title_wrapper {
+        -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+     display: flex;
+     -webkit-align-items: center;
+     -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+       align-items: center;
+       -webkit-align-items: space-between;
+       -moz-align-items: space-between;
+        -ms-align-items: space-between;
+        -o-align-items: space-between;
+         align-items: space-between;
+      justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.user_sec {
+        -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+     display: flex;
+}
+
+// Dashboard card styles
+.refresh_btn{
+    background: #2d900e;
+    border: 1px solid #2d900e;
+    line-height: normal;
+}
+.modal_sec {
+    &.two_form{
+    flex-wrap: wrap;
+        -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+     display: flex;
+     -webkit-align-items: center;
+     -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+       align-items: center;
+    width: 100%;
+}
+}
+.vendor_item {
+    margin-bottom: 10px;
+    width: 24%;
+    margin-right: 10px;
+    .vendor_card {
+        width: 100%;
+    margin: 0;
+    }
+}
+
+.image_warpper {
+    width: 100%;
+    img{
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        border-radius: 20%;
+        border: 2px solid #eaeaea;
+    }
+}
+
+// machine page styles
+.company_name  {
+    h2{
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+}
+.align_right{
+        -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+     display: flex;
+     -webkit-align-items: center;
+     -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+       align-items: center;
+    justify-content: flex-end;
+}
+.machine_list{
+    .vendor_card {
+        position: relative;
+        h2{
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+        h3{
+            font-size: 16px;
+            font-weight: 400;
+            color: #909090;
+        }
+        p {
+                -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+     display: flex;
+            font-size: 14px;
+            font-weight: 500;
+             -webkit-align-items: center;
+     -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+       align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+        span {
+            font-weight: 300;
+            margin-left: 5px;
+        }
+    }
+        .action_menus {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            .menu_open {
+                color: #928d8d;
+            }
+    }
+
+    }
+}
+
+
+// Responsive Styles
+@media only screen and (max-width:768px) {
+.vendor_item {
+    width: 48%;
+}
+.refresh_btn {
+    margin: 0;
+    margin-top: 10px;
+
+}
+}
+
+@media only screen and (max-width:600px) {
+    .vendor_item {
+        width:100%;
+        margin-right: 0;
+    }
+    }
+    
+@media only screen and (min-device-width: 320px) 
+and (max-device-width: 768px) 
+and (orientation: landscape) {
+
+}

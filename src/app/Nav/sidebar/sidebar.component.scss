@@ -41,14 +41,13 @@
     }
 }
 .logo_wrapper{
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // height: 100px;
-    padding: 30px 20px;
+    padding: 20px;
     img{
-        width: 100%;
-        max-width: 135px;
+        width: 200px;
+        height: 50px;
+        object-fit: contain;
+        object-position: center;
+        max-width: 100%;
     }
 }
 .mat-toolbar-multiple-rows {
@@ -71,4 +70,11 @@
     }
   }
 
- 
+// Custom styles
+.navigation_wrapper{
+    .material-icons {
+        font-size: 20px;
+        margin-right: 10px;
+        font-weight: 100;
+    }
+}

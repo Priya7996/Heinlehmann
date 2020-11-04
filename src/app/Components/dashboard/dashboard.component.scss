@@ -4,7 +4,11 @@
     opacity: 0.9;
     position: fixed;
     display: flex;
-    align-items: center;
+     -webkit-align-items: center;
+     -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+       align-items: center;
     justify-content: center;
     top: 0;
     left: 0;
@@ -32,8 +36,16 @@
     color: #FFF;
     background: #F69320;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+     display: flex;    
+      -webkit-align-items: center;
+     -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+       align-items: center;
     justify-content: center;
     height: 32px;
     width: 32px;
@@ -57,11 +69,14 @@ mat-card{
         margin-bottom: 6px;
     }
     &.vendor_card{
+        &:hover{
+            border:1px solid #F69320;
+            }
         mat-card-subtitle{
             margin-bottom: 0;
         }
         &.selected{
-            border:1px solid #F69320;
+            border:1px solid #ccc;
         }
         img.tick {
             max-width: 24px;
@@ -72,6 +87,18 @@ mat-card{
     }
 }
 .sub_header{
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+     display: flex;
+     -webkit-align-items: space-between;
+     -moz-align-items: space-between;
+      -ms-align-items: space-between;
+      -o-align-items: space-between;
+       align-items: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
     mat-form-field{
         margin-left: 20px;
     }
@@ -84,9 +111,11 @@ mat-card{
   mat-card{
       margin: 0;
       margin-right: 10px;
-      h2.style-2{
-          font-size: 46px;
-          color: #fff;
+      h2{
+        margin: 0;
+        font-size:24px;
+        color: #fff;
+        margin-bottom: 5px;
           span{
               font-size: 14px;
               font-weight: 300;
@@ -107,8 +136,8 @@ mat-card{
   mat-card{
     margin: 0;
     margin-right: 10px;
-    h4.style-2{
-        font-size: 26px;
+    h4{
+        font-size: 18px;
         color: #fff;
         span{
             font-size: 14px;
