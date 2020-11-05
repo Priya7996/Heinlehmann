@@ -3,6 +3,7 @@
     <div class="logo_wrapper">
       <img src="../../../assets/img/Group 481.png">
     </div>
+    <h2>Priya</h2>
     <div class="navigation_wrapper" *ngIf="usertype_id === '2'">
       <!-- <button mat-button routerLink="./admin_dashboard" routerLinkActive="active-link"><img src="../../../assets/img/web-page-home.svg">Dashboard</button> -->
       <!-- <button mat-button routerLink="./notify" routerLinkActive="active-link"><img src="../../../assets/img/notification.svg">Notifications</button> -->
@@ -59,6 +60,8 @@
           <!-- <button type="button" mat-icon-button (click)="drawer.toggle()" class="">
             <mat-icon><span class="material-icons">menu</span></mat-icon>
           </button> -->
+
+          <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="sidenav.toggle()" class="toggle-btn">
           <span>
             <h2>{{first_name}}</h2>
           </span>
