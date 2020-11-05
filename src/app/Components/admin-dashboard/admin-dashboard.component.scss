@@ -55,12 +55,17 @@ mat-card{
         margin-bottom: 6px;
     }
     &.vendor_card{
+        border: 1px solid #cacaca;
+        cursor: pointer;
+        &:hover{
+                border:1px solid #F69320;
+        }
         mat-card-subtitle{
             margin-bottom: 0;
         }
-        &.selected{
-            border:1px solid #F69320;
-        }
+        // &.selected{
+        //     border:1px solid #F69320;
+        // }
         img.tick {
             max-width: 24px;
             position: absolute;
