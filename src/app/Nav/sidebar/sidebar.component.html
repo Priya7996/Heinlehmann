@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav #drawer [opened]="opened" [mode]="mode" *ngIf="nav.visible">
+  <mat-sidenav #sidenav [mode]="mode" opened="true" disableClose="true">
     <div class="logo_wrapper">
       <img src="../../../assets/img/Group 481.png">
     </div>
@@ -53,12 +53,12 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar class="header" *ngIf="nav.visible">
+    <mat-toolbar class="header">
       <mat-toolbar-row class="header_area">
         <div class="company_name">
-          <!-- <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="drawer.toggle()" class="toggle-btn">
+          <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="sidenav.toggle()" class="toggle-btn">
             <mat-icon><span class="material-icons">menu</span></mat-icon>
-          </button> -->
+          </button>
           <span>
             <h2>{{first_name}}</h2>
           </span>
@@ -73,6 +73,7 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
 
 
 <!-- <a  class="user_link" (click)="open()"><mat-icon class="v-align-middle edit">edit</mat-icon></a>
